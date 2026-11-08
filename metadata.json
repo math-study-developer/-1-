@@ -1,0 +1,6 @@
+{
+  "name": "中1数学のおたすけ辞書",
+  "description": "中学1年生向け「1時間1画面」数学学習図鑑。スモールステップ解説、操作できるシミュレーター、2択クイズでつまずきを解消します。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
