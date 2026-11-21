@@ -4,20 +4,27 @@ import {
   NumberLineSim,
   TugOfWarSim,
   SignMachineSim,
+  PrimeFactorTreeSim,
+  StrawPatternSim,
   BalanceScaleSim,
   TransposeDemoSim,
   TermOrganizerSim,
   SubstitutionSim,
+  ProportionRatioSim,
   LinearGraphSim,
   InverseGraphSim,
   LineAngleViewerSim,
   CompassBisectorSim,
   SectorCalculatorSim,
+  ProjectionViewerSim,
   CubeSkewLinesSim,
+  ConeUnfoldSim,
   SolidVolumeSim,
   SphereFormulaSim,
   HistogramViewerSim,
   MeanMedianModeSim,
+  RelativeFreqSim,
+  RelativeFreqCompareSim,
 } from './Simulators';
 
 interface SimulatorContainerProps {
@@ -34,6 +41,10 @@ export const SimulatorContainer: React.FC<SimulatorContainerProps> = ({ type }) 
       return <TugOfWarSim />;
     case 'signMachine':
       return <SignMachineSim />;
+    case 'primeFactorTree':
+      return <PrimeFactorTreeSim />;
+    case 'strawPattern':
+      return <StrawPatternSim />;
     case 'balanceScale':
       return <BalanceScaleSim />;
     case 'transposeDemo':
@@ -42,6 +53,8 @@ export const SimulatorContainer: React.FC<SimulatorContainerProps> = ({ type }) 
       return <TermOrganizerSim />;
     case 'substitutionTool':
       return <SubstitutionSim />;
+    case 'proportionRatio':
+      return <ProportionRatioSim />;
     case 'linearGraph':
       return <LinearGraphSim />;
     case 'inverseGraph':
@@ -52,8 +65,12 @@ export const SimulatorContainer: React.FC<SimulatorContainerProps> = ({ type }) 
       return <CompassBisectorSim />;
     case 'sectorCalculator':
       return <SectorCalculatorSim />;
+    case 'projectionViewer':
+      return <ProjectionViewerSim />;
     case 'cubeSkewLines':
       return <CubeSkewLinesSim />;
+    case 'coneUnfold':
+      return <ConeUnfoldSim />;
     case 'solidVolume':
       return <SolidVolumeSim />;
     case 'sphereFormula':
@@ -62,6 +79,10 @@ export const SimulatorContainer: React.FC<SimulatorContainerProps> = ({ type }) 
       return <HistogramViewerSim />;
     case 'meanMedianMode':
       return <MeanMedianModeSim />;
+    case 'relativeFreqSim':
+      return <RelativeFreqSim />;
+    case 'relativeFreqCompare':
+      return <RelativeFreqCompareSim />;
     default:
       return null;
   }

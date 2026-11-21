@@ -9,7 +9,7 @@ interface SearchModalProps {
   onSelectLesson: (lesson: Lesson) => void;
 }
 
-const QUICK_TAGS = ['移項', '比例', '反比例', '累乗', '作図', 'ねじれの位置', '体積', '扇形', '中央値', '符号'];
+const QUICK_TAGS = ['素因数分解', '移項', '比例式', '比例', '反比例', '垂直二等分線', 'ねじれの位置', 'おうぎ形', '表面積', '相対度数'];
 
 export const SearchModal: React.FC<SearchModalProps> = ({
   isOpen,
@@ -57,6 +57,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
         return (
           lesson.title.toLowerCase().includes(q) ||
           lesson.chapterTitle.toLowerCase().includes(q) ||
+          lesson.sectionTitle.toLowerCase().includes(q) ||
           lesson.target.toLowerCase().includes(q) ||
           lesson.keywords.some((k) => k.toLowerCase().includes(q))
         );
@@ -141,8 +142,10 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                 className="w-full p-3 rounded-xl hover:bg-sky-50 text-left transition flex items-center justify-between group"
               >
                 <div className="min-w-0 pr-3">
-                  <div className="flex items-center gap-2 text-xs text-slate-500 mb-0.5">
+                  <div className="flex flex-wrap items-center gap-x-2 text-xs text-slate-500 mb-0.5">
                     <span>{lesson.chapterTitle}</span>
+                    <span aria-hidden="true">·</span>
+                    <span>{lesson.sectionTitle}</span>
                     <span aria-hidden="true">·</span>
                     <span>第{lesson.lessonNumber}時</span>
                   </div>
@@ -161,7 +164,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
         {/* Footer info */}
         <div className="px-4 py-2 bg-slate-50 border-t border-slate-200 text-[11px] text-slate-400 flex justify-between items-center">
-          <span>全42時間分から瞬時に検索</span>
+          <span>全{ALL_LESSONS.length}時間分から瞬時に検索</span>
           <span>Escで閉じる</span>
         </div>
       </div>

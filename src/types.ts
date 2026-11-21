@@ -39,25 +39,34 @@ export type SimulatorType =
   | 'numberLine'
   | 'tugOfWar'
   | 'signMachine'
+  | 'primeFactorTree'
+  | 'strawPattern'
   | 'termOrganizer'
   | 'balanceScale'
   | 'transposeDemo'
   | 'substitutionTool'
+  | 'proportionRatio'
   | 'linearGraph'
   | 'inverseGraph'
   | 'lineAngleViewer'
   | 'compassBisector'
   | 'sectorCalculator'
+  | 'projectionViewer'
   | 'cubeSkewLines'
+  | 'coneUnfold'
   | 'solidVolume'
   | 'sphereFormula'
   | 'histogramViewer'
-  | 'meanMedianMode';
+  | 'meanMedianMode'
+  | 'relativeFreqSim'
+  | 'relativeFreqCompare';
 
 export interface Lesson {
   id: string; // e.g. 'ch1-1'
   chapterId: number; // 1 to 7
-  lessonNumber: number; // 1 to N
+  sectionId: number; // 1 to 4 within chapter
+  sectionTitle: string; // e.g. '1節 正の数・負の数'
+  lessonNumber: number; // 1 to N within chapter
   totalLessonsInChapter: number;
   chapterTitle: string;
   title: string;
@@ -69,6 +78,13 @@ export interface Lesson {
   formulaModel: FormulaModel;
   cautionMistake: CautionMistake;
   quiz: Quiz;
+}
+
+export interface Section {
+  id: number;
+  title: string;
+  plannedHoursLabel: string;
+  lessons: Lesson[];
 }
 
 export interface Chapter {
@@ -83,5 +99,6 @@ export interface Chapter {
     badgeBg: string;
   };
   totalLessons: number;
+  sections: Section[];
   lessons: Lesson[];
 }

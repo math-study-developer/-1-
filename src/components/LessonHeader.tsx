@@ -34,8 +34,10 @@ export const LessonHeader: React.FC<LessonHeaderProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         {/* Breadcrumb / Lesson Meta */}
         <div>
-          <div className="flex items-center gap-2 text-xs font-medium text-slate-500 mb-1">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs font-medium text-slate-500 mb-1">
             <span>{lesson.chapterTitle}</span>
+            <span aria-hidden="true">·</span>
+            <span>{lesson.sectionTitle}</span>
             <span aria-hidden="true">·</span>
             <span className="text-sky-700 font-bold">
               第{lesson.lessonNumber}時 / 全{lesson.totalLessonsInChapter}時間
